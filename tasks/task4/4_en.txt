@@ -1,0 +1,9 @@
+/-- Solve task 3 using the WITH operator to create a temporary table named temp. If your MySQL version is earlier than 8.0, create this query analogously to how it's done in the notes. --/
+
+with temp as (
+select order_id, avg(quantity) as avg_quantity
+from order_details
+where quantity > 10
+group by order_id
+)
+select avg(avg_quantity) from temp;
