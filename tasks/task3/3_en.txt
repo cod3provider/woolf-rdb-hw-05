@@ -1,0 +1,13 @@
+/-- Write an SQL query nested in the FROM clause, which selects rows with the condition quantity>10 from the order_details table. For the obtained data, find the average value of the quantity field — grouping should be done by order_id. --/
+
+select avg(selected_rows.avg_quantity)
+from (
+    select order_id, avg(quantity) as avg_quantity
+    from order_details
+    where quantity > 10
+    group by order_id
+) as selected_rows;
+
+
+
+
