@@ -1,0 +1,9 @@
+/-- Write an SQL query that will display the order_details table. Filter the results so that the corresponding record from the orders table satisfies the condition shipper_id=3.
+This should be done using a nested query within the WHERE clause. --/
+
+select * from order_details 
+where order_id in (select id from orders where shipper_id = 3);
+
+
+
+

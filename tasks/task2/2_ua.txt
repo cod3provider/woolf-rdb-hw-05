@@ -1,0 +1,5 @@
+/-- Напишіть SQL запит, який буде відображати таблицю order_details. Відфільтруйте результати так, щоб відповідний запис із таблиці orders виконував умову shipper_id=3.
+Це має бути зроблено за допомогою вкладеного запиту в операторі WHERE. --/
+
+select * from order_details 
+where order_id in (select id from orders where shipper_id = 3);
