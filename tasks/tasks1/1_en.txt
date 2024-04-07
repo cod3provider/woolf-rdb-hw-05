@@ -1,0 +1,10 @@
+/-- Write an SQL query that will display the order_details table and the customer_id field from the orders table accordingly for each record in the order_details table.
+This should be done using a nested query within the SELECT statement. --/
+
+select order_details.*, 
+(select customer_id from orders where id = order_details.order_id) as customer_id
+from order_details;
+
+
+
+
