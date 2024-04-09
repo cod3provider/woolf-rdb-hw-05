@@ -13,7 +13,7 @@ no sql
 begin
 	declare result float;
     
-    if a = 0 then
+    if b = 0 then
 		set result = null;
 	else
 		set result = a / b;
